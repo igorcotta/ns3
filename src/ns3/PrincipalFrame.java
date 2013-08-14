@@ -61,6 +61,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
     String codigo = "";
     AbrirFrame abrir = new AbrirFrame();
     File routerF;
+    
     /** Creates new form PrincipalFrame */
     public PrincipalFrame() {
         initComponents();
@@ -83,31 +84,30 @@ public class PrincipalFrame extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
         jCheckBoxMenuItem2 = new javax.swing.JCheckBoxMenuItem();
         jMenuExcluir = new javax.swing.JMenuItem();
-        jPanelP = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jPanel2 = new javax.swing.JPanel();
-        TerminalMenu = new javax.swing.JLabel();
+        panelAmbiente = new javax.swing.JPanel();
+        scrArvore = new javax.swing.JScrollPane();
+        arvore = new javax.swing.JTree();
+        scrComponentes = new javax.swing.JScrollPane();
+        panelComponentes = new javax.swing.JPanel();
+        terminalMenu = new javax.swing.JLabel();
         switchMenu = new javax.swing.JLabel();
         accessPointMenu = new javax.swing.JLabel();
         routerMenu = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jTBP2P = new javax.swing.JToggleButton();
-        jTBCsma = new javax.swing.JToggleButton();
-        jTBWifi = new javax.swing.JToggleButton();
-        jLabel4 = new javax.swing.JLabel();
-        jCBConexoes = new javax.swing.JComboBox();
-        jPanel3 = new javax.swing.JPanel();
-        jTBUdp = new javax.swing.JToggleButton();
-        jLabel5 = new javax.swing.JLabel();
-        jTBTcp = new javax.swing.JToggleButton();
-        jCBAplicacoes = new javax.swing.JComboBox();
-        jLabel1 = new javax.swing.JLabel();
-        jTBEcho = new javax.swing.JToggleButton();
-        jButton1 = new javax.swing.JButton();
+        scrPropriedades = new javax.swing.JScrollPane();
+        panelConfiguracao = new javax.swing.JPanel();
+        tbtnUDP = new javax.swing.JToggleButton();
+        lblCriarAplicacao = new javax.swing.JLabel();
+        tbtnTCP = new javax.swing.JToggleButton();
+        cmbAplicacoes = new javax.swing.JComboBox();
+        lblAplicacoes = new javax.swing.JLabel();
+        tbtnecho = new javax.swing.JToggleButton();
+        lblCriarConexao = new javax.swing.JLabel();
+        tbtnP2P = new javax.swing.JToggleButton();
+        tbtnCSMA = new javax.swing.JToggleButton();
+        tbtnWifi = new javax.swing.JToggleButton();
+        cmbConexoes = new javax.swing.JComboBox();
+        lblConexoes = new javax.swing.JLabel();
+        btnLimpar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuArquivo = new javax.swing.JMenu();
         jMenuNovo = new javax.swing.JMenuItem();
@@ -162,25 +162,26 @@ public class PrincipalFrame extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
 
-        jPanelP.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanelP.setMaximumSize(null);
-        jPanelP.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        panelAmbiente.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        panelAmbiente.setMaximumSize(null);
+        panelAmbiente.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jPanelPMouseMoved(evt);
+                panelAmbienteMouseMoved(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanelPLayout = new javax.swing.GroupLayout(jPanelP);
-        jPanelP.setLayout(jPanelPLayout);
-        jPanelPLayout.setHorizontalGroup(
-            jPanelPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout panelAmbienteLayout = new javax.swing.GroupLayout(panelAmbiente);
+        panelAmbiente.setLayout(panelAmbienteLayout);
+        panelAmbienteLayout.setHorizontalGroup(
+            panelAmbienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 455, Short.MAX_VALUE)
+        );
+        panelAmbienteLayout.setVerticalGroup(
+            panelAmbienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanelPLayout.setVerticalGroup(
-            jPanelPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 607, Short.MAX_VALUE)
-        );
 
+        arvore.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Componentes");
         javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Terminal");
         treeNode1.add(treeNode2);
@@ -192,14 +193,16 @@ public class PrincipalFrame extends javax.swing.JFrame {
         treeNode1.add(treeNode2);
         treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Hub");
         treeNode1.add(treeNode2);
-        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane1.setViewportView(jTree1);
+        arvore.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        scrArvore.setViewportView(arvore);
 
-        TerminalMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Terminal.png"))); // NOI18N
-        TerminalMenu.setToolTipText("Terminal");
-        TerminalMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+        panelComponentes.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        terminalMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Terminal.png"))); // NOI18N
+        terminalMenu.setToolTipText("Terminal");
+        terminalMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TerminalMenuMouseClicked(evt);
+                terminalMenuMouseClicked(evt);
             }
         });
 
@@ -226,166 +229,172 @@ public class PrincipalFrame extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(TerminalMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(switchMenu)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(accessPointMenu)
-                                    .addComponent(routerMenu))))))
-                .addContainerGap(37, Short.MAX_VALUE))
+        javax.swing.GroupLayout panelComponentesLayout = new javax.swing.GroupLayout(panelComponentes);
+        panelComponentes.setLayout(panelComponentesLayout);
+        panelComponentesLayout.setHorizontalGroup(
+            panelComponentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelComponentesLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(panelComponentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(terminalMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(switchMenu)
+                    .addComponent(routerMenu)
+                    .addComponent(accessPointMenu))
+                .addGap(39, 39, 39))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        panelComponentesLayout.setVerticalGroup(
+            panelComponentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelComponentesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(TerminalMenu)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(terminalMenu)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(switchMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(routerMenu)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(accessPointMenu)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
-        jScrollPane2.setViewportView(jPanel2);
+        scrComponentes.setViewportView(panelComponentes);
 
-        jLabel3.setForeground(new java.awt.Color(5, 0, 0));
-        jLabel3.setText("Criar Conexão:");
+        scrPropriedades.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jTBP2P.setText("P2P");
-        jTBP2P.setFocusable(false);
-        jTBP2P.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jTBP2P.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        panelConfiguracao.setBorder(javax.swing.BorderFactory.createTitledBorder(null, " Configuração ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP));
+        panelConfiguracao.setPreferredSize(new java.awt.Dimension(656, 30));
 
-        jTBCsma.setText("Csma");
-        jTBCsma.setFocusable(false);
-        jTBCsma.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jTBCsma.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        tbtnUDP.setText("UDP");
+        tbtnUDP.setFocusable(false);
+        tbtnUDP.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        tbtnUDP.setPreferredSize(new java.awt.Dimension(63, 28));
+        tbtnUDP.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jTBWifi.setText("Wifi");
-        jTBWifi.setFocusable(false);
-        jTBWifi.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jTBWifi.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lblCriarAplicacao.setForeground(new java.awt.Color(5, 0, 0));
+        lblCriarAplicacao.setText("Criar Aplicação:");
 
-        jLabel4.setText("Conexões: ");
+        tbtnTCP.setText("TCP");
+        tbtnTCP.setFocusable(false);
+        tbtnTCP.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        tbtnTCP.setPreferredSize(new java.awt.Dimension(63, 28));
+        tbtnTCP.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jCBConexoes.setPreferredSize(new java.awt.Dimension(200, 28));
-        jCBConexoes.addActionListener(new java.awt.event.ActionListener() {
+        cmbAplicacoes.setPreferredSize(new java.awt.Dimension(200, 28));
+        cmbAplicacoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCBConexoesActionPerformed(evt);
+                cmbAplicacoesActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel3)
+        lblAplicacoes.setText("Aplicações:");
+
+        tbtnecho.setText("ECHO");
+        tbtnecho.setFocusable(false);
+        tbtnecho.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        tbtnecho.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        lblCriarConexao.setForeground(new java.awt.Color(5, 0, 0));
+        lblCriarConexao.setText("Criar Conexão:");
+
+        tbtnP2P.setText("P2P");
+        tbtnP2P.setFocusable(false);
+        tbtnP2P.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        tbtnP2P.setPreferredSize(new java.awt.Dimension(63, 28));
+        tbtnP2P.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        tbtnCSMA.setText("Csma");
+        tbtnCSMA.setFocusable(false);
+        tbtnCSMA.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        tbtnCSMA.setPreferredSize(new java.awt.Dimension(63, 28));
+        tbtnCSMA.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        tbtnWifi.setText("Wifi");
+        tbtnWifi.setFocusable(false);
+        tbtnWifi.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        tbtnWifi.setPreferredSize(new java.awt.Dimension(63, 28));
+        tbtnWifi.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        cmbConexoes.setPreferredSize(new java.awt.Dimension(200, 28));
+        cmbConexoes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbConexoesActionPerformed(evt);
+            }
+        });
+
+        lblConexoes.setText("Conexões:");
+
+        btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelConfiguracaoLayout = new javax.swing.GroupLayout(panelConfiguracao);
+        panelConfiguracao.setLayout(panelConfiguracaoLayout);
+        panelConfiguracaoLayout.setHorizontalGroup(
+            panelConfiguracaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelConfiguracaoLayout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addGroup(panelConfiguracaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCriarConexao, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblCriarAplicacao, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTBP2P)
-                .addGap(0, 0, 0)
-                .addComponent(jTBCsma)
-                .addGap(0, 0, 0)
-                .addComponent(jTBWifi)
-                .addGap(66, 66, 66)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addComponent(jCBConexoes, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(65, 65, 65))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                .addComponent(jCBConexoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTBWifi, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTBCsma, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTBP2P, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel3.setPreferredSize(new java.awt.Dimension(656, 30));
-
-        jTBUdp.setText("UDP");
-        jTBUdp.setFocusable(false);
-        jTBUdp.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jTBUdp.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        jLabel5.setForeground(new java.awt.Color(5, 0, 0));
-        jLabel5.setText("Criar Aplicação:");
-
-        jTBTcp.setText("TCP");
-        jTBTcp.setFocusable(false);
-        jTBTcp.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jTBTcp.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        jCBAplicacoes.setPreferredSize(new java.awt.Dimension(200, 28));
-        jCBAplicacoes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCBAplicacoesActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Aplicações:");
-
-        jTBEcho.setText("ECHO");
-        jTBEcho.setFocusable(false);
-        jTBEcho.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jTBEcho.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel5)
+                .addGroup(panelConfiguracaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addGroup(panelConfiguracaoLayout.createSequentialGroup()
+                        .addComponent(tbtnP2P, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(tbtnCSMA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(tbtnWifi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelConfiguracaoLayout.createSequentialGroup()
+                        .addComponent(tbtnTCP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(tbtnUDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(tbtnecho)))
+                .addGap(13, 13, 13)
+                .addGroup(panelConfiguracaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblConexoes, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblAplicacoes, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTBTcp)
+                .addGroup(panelConfiguracaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(cmbConexoes, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbAplicacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, 0)
-                .addComponent(jTBUdp)
-                .addGap(0, 0, 0)
-                .addComponent(jTBEcho)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jCBAplicacoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65))
+                .addComponent(btnLimpar)
+                .addGap(0, 0, 0))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel1)
-                .addComponent(jCBAplicacoes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(1, 1, 1)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTBTcp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTBUdp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTBEcho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        panelConfiguracaoLayout.setVerticalGroup(
+            panelConfiguracaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelConfiguracaoLayout.createSequentialGroup()
+                .addGroup(panelConfiguracaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panelConfiguracaoLayout.createSequentialGroup()
+                        .addGroup(panelConfiguracaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConfiguracaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblConexoes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cmbConexoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConfiguracaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(tbtnWifi, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tbtnCSMA, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tbtnP2P, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, 0)
+                        .addGroup(panelConfiguracaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tbtnecho, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tbtnTCP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tbtnUDP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConfiguracaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(cmbAplicacoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblAplicacoes))))
+                    .addGroup(panelConfiguracaoLayout.createSequentialGroup()
+                        .addComponent(lblCriarConexao, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(lblCriarAplicacao, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(8, 8, 8))
+            .addGroup(panelConfiguracaoLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(btnLimpar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jButton1.setText("Clear");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         jMenuArquivo.setText("Arquivo");
 
@@ -444,59 +453,48 @@ public class PrincipalFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(0, 0, 0)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(scrArvore)
+                    .addComponent(scrComponentes, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
-                    .addComponent(jScrollPane1))
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jPanelP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 676, Short.MAX_VALUE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)))
-                .addContainerGap())
+                        .addComponent(panelAmbiente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, 0)
+                        .addComponent(scrPropriedades, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(panelConfiguracao, javax.swing.GroupLayout.DEFAULT_SIZE, 619, Short.MAX_VALUE))
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(scrArvore, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
+                        .addGap(0, 0, 0)
+                        .addComponent(scrComponentes, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(panelConfiguracao, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(18, 18, 18)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3)
-                            .addComponent(jPanelP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
+                            .addComponent(scrPropriedades)
+                            .addComponent(panelAmbiente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(0, 0, 0))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-	private void TerminalMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TerminalMenuMouseClicked
+	private void terminalMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_terminalMenuMouseClicked
             try {
                 criarNo(TERMINAL);
             } catch (IOException ex) {
                 Logger.getLogger(PrincipalFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
             manterLinks();
-    }//GEN-LAST:event_TerminalMenuMouseClicked
+    }//GEN-LAST:event_terminalMenuMouseClicked
 
     private void switchMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_switchMenuMouseClicked
             try {
@@ -540,7 +538,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
                     //excluirNo(label);
                 criarConexao(evt);
                 
-                if(jTBTcp.isSelected()||jTBUdp.isSelected()||jTBEcho.isSelected())
+                if(tbtnTCP.isSelected()||tbtnUDP.isSelected()||tbtnecho.isSelected())
                     validarAplicacao(evt);
                 if(ultimaBorda!=null){
                     ultimaBorda.setBorder(null);
@@ -549,7 +547,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
                 label.setSelected(true);
                 ultimaBorda = label;
                 label.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 127, 0)));
-                label.exibirPropriedades(label.getTipo(),jScrollPane3);
+                label.exibirPropriedades(label.getTipo(),scrPropriedades);
                 
                    RouterTable routerT = null;                     
                 
@@ -588,8 +586,8 @@ public class PrincipalFrame extends javax.swing.JFrame {
         }); 
         
         inserirComponenteArvore(newNode);
-        jPanelP.add(newNode);
-        jPanelP.repaint();
+        panelAmbiente.add(newNode);
+        panelAmbiente.repaint();
     }
 
     public void excluirNo(Node no){
@@ -622,7 +620,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
         no.setNome("");
         
         manterLinks();
-        jPanelP.repaint();
+        panelAmbiente.repaint();
         remove(no);
         
     }
@@ -648,14 +646,14 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
 
         DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode(no.getNome());
-        TreePath path = jTree1.getNextMatch(prefix, startRow, Position.Bias.Forward);
-        jTree1.setSelectionPath(path);
-        ((DefaultMutableTreeNode)jTree1.getSelectionPath().getLastPathComponent()).add(treeNode2);
+        TreePath path = arvore.getNextMatch(prefix, startRow, Position.Bias.Forward);
+        arvore.setSelectionPath(path);
+        ((DefaultMutableTreeNode)arvore.getSelectionPath().getLastPathComponent()).add(treeNode2);
         
-        jTree1 = new JTree(jTree1.getModel());
-        jScrollPane1.setViewportView(jTree1);
-        jTree1.expandPath(path);
-        jTree1.addMouseListener(new java.awt.event.MouseAdapter(){
+        arvore = new JTree(arvore.getModel());
+        scrArvore.setViewportView(arvore);
+        arvore.expandPath(path);
+        arvore.addMouseListener(new java.awt.event.MouseAdapter(){
         @Override
         public void mouseClicked(MouseEvent evt) {
             String nomePaiSelecionado = "";
@@ -684,17 +682,17 @@ public class PrincipalFrame extends javax.swing.JFrame {
     
     public void removerComponenteArvore(Node no){
         
-        jTree1.expandRow(1);
-        jTree1.expandRow(2+Node.getQtde(TERMINAL));
-        jTree1.expandRow(3+Node.getQtde(TERMINAL)+Node.getQtde(SWITCH));
-        jTree1.expandRow(4+Node.getQtde(TERMINAL)+Node.getQtde(SWITCH)+Node.getQtde(AP));
+        arvore.expandRow(1);
+        arvore.expandRow(2+Node.getQtde(TERMINAL));
+        arvore.expandRow(3+Node.getQtde(TERMINAL)+Node.getQtde(SWITCH));
+        arvore.expandRow(4+Node.getQtde(TERMINAL)+Node.getQtde(SWITCH)+Node.getQtde(AP));
         
-        TreePath path = jTree1.getNextMatch(no.getNome(), 0, Position.Bias.Forward);
-        jTree1.setSelectionPath(path);
-        ((DefaultMutableTreeNode)jTree1.getSelectionPath().getLastPathComponent()).removeFromParent();
-        jTree1 = new JTree(jTree1.getModel());
-        jScrollPane1.setViewportView(jTree1);
-        jTree1.expandPath(path.getParentPath());
+        TreePath path = arvore.getNextMatch(no.getNome(), 0, Position.Bias.Forward);
+        arvore.setSelectionPath(path);
+        ((DefaultMutableTreeNode)arvore.getSelectionPath().getLastPathComponent()).removeFromParent();
+        arvore = new JTree(arvore.getModel());
+        scrArvore.setViewportView(arvore);
+        arvore.expandPath(path.getParentPath());
         
     }
 
@@ -1096,11 +1094,11 @@ public class PrincipalFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jMenuCodigoActionPerformed
 
-    private void jCBConexoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBConexoesActionPerformed
-        configurarConexao(jCBConexoes.getSelectedIndex());
-        conexoes[jCBConexoes.getSelectedIndex()].setCor(Color.blue);
-        jCBConexoes.setSelectedItem(null);
-    }//GEN-LAST:event_jCBConexoesActionPerformed
+    private void cmbConexoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbConexoesActionPerformed
+        configurarConexao(cmbConexoes.getSelectedIndex());
+        conexoes[cmbConexoes.getSelectedIndex()].setCor(Color.blue);
+        cmbConexoes.setSelectedItem(null);
+    }//GEN-LAST:event_cmbConexoesActionPerformed
 
     private void criarConexao(java.awt.event.MouseEvent evt){
 
@@ -1110,7 +1108,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
             Conexao aux;
             String tipoAux = null;
 
-             Graphics2D g2d = (Graphics2D) jPanelP.getGraphics().create();
+             Graphics2D g2d = (Graphics2D) panelAmbiente.getGraphics().create();
              float dash1[] = {10.0f};
              BasicStroke dashed = new BasicStroke(3.0f,BasicStroke.CAP_BUTT,BasicStroke.JOIN_MITER,10.0f, dash1, 0.0f);
 
@@ -1118,18 +1116,18 @@ public class PrincipalFrame extends javax.swing.JFrame {
             g2d.drawLine(linhaX, linhaY, (evt.getComponent().getX()+evt.getComponent().getHeight()/2), (evt.getComponent().getY()+evt.getComponent().getWidth()/2));
             g2d.dispose();
 
-            if(jTBP2P.isSelected()){
+            if(tbtnP2P.isSelected()){
                 tipoAux = "pointToPoint";
                 ((Node)auxLink).setIsP2P(true);
                 ((Node)evt.getComponent()).setIsP2P(true);
             }
-            if(jTBCsma.isSelected()){
+            if(tbtnCSMA.isSelected()){
                 tipoAux = "csma";
                 ((Node)auxLink).setIsCsma(true);
                 ((Node)evt.getComponent()).setIsCsma(true);
 
             }
-            if(jTBWifi.isSelected()){
+            if(tbtnWifi.isSelected()){
                 tipoAux = "wifi";
                 ((Node)auxLink).setIsWifi(true);
                 ((Node)evt.getComponent()).setIsWifi(true);
@@ -1165,16 +1163,16 @@ public class PrincipalFrame extends javax.swing.JFrame {
             conexoes[newConexao.getIdConexao()] = newConexao;
             configurarConexao(newConexao.getIdConexao());
 
-            jCBConexoes.insertItemAt(newConexao.getNome(),newConexao.getIdConexao());
+            cmbConexoes.insertItemAt(newConexao.getNome(),newConexao.getIdConexao());
 
             auxLink = null;
 
             flagLinha=0;
-            jTBP2P.setSelected(false);
-            jTBCsma.setSelected(false);
-            jTBWifi.setSelected(false);
+            tbtnP2P.setSelected(false);
+            tbtnCSMA.setSelected(false);
+            tbtnWifi.setSelected(false);
         }
-        if(jTBP2P.isSelected()||jTBCsma.isSelected()||jTBWifi.isSelected()){
+        if(tbtnP2P.isSelected()||tbtnCSMA.isSelected()||tbtnWifi.isSelected()){
             flagLinha++;
             auxLink = evt.getComponent();
             linhaX = (evt.getComponent().getX()+evt.getComponent().getHeight()/2);
@@ -1340,38 +1338,38 @@ public class PrincipalFrame extends javax.swing.JFrame {
     public void validarAplicacao(java.awt.event.MouseEvent evt){
         if(auxLink!=null){
             Aplicacao newAplicacao = null;
-            if(jTBTcp.isSelected()){
+            if(tbtnTCP.isSelected()){
                 newAplicacao = new Aplicacao(auxLink,evt.getComponent(),"Tcp");
-                jTBTcp.setSelected(false);
+                tbtnTCP.setSelected(false);
                 //Seta no panel protocolo usado
                 ((Node)auxLink).setIsTcp(true);
                 ((Node)evt.getComponent()).setIsTcp(true);
                 
                 aplicacoes[Aplicacao.getQtde()-1] = newAplicacao;
                 configurarAplicacao(newAplicacao.getIdAplicacao());
-                jCBAplicacoes.insertItemAt(newAplicacao.getNome(),newAplicacao.getIdAplicacao());
+                cmbAplicacoes.insertItemAt(newAplicacao.getNome(),newAplicacao.getIdAplicacao());
             }
-            if(jTBUdp.isSelected()){
+            if(tbtnUDP.isSelected()){
                 newAplicacao = new Aplicacao(auxLink,evt.getComponent(),"Udp");
-                jTBUdp.setSelected(false);
+                tbtnUDP.setSelected(false);
                 //Seta no panel protocolo usado
                 ((Node)auxLink).setIsUdp(true);
                 ((Node)evt.getComponent()).setIsUdp(true);
                 
                 aplicacoes[Aplicacao.getQtde()-1] = newAplicacao;
                 configurarAplicacao(newAplicacao.getIdAplicacao());
-                jCBAplicacoes.insertItemAt(newAplicacao.getNome(),newAplicacao.getIdAplicacao());
+                cmbAplicacoes.insertItemAt(newAplicacao.getNome(),newAplicacao.getIdAplicacao());
             }
             
-            if(jTBEcho.isSelected()){
+            if(tbtnecho.isSelected()){
                 newAplicacao = new Aplicacao(auxLink,evt.getComponent(),"Echo");
-                jTBEcho.setSelected(false);
+                tbtnecho.setSelected(false);
                 //Seta no panel protocolo usado
                 ((Node)auxLink).setIsUdp(true);
                 ((Node)evt.getComponent()).setIsUdp(true);
                 aplicacoes[Aplicacao.getQtde()-1] = newAplicacao;
                 configurarAplicacao(newAplicacao.getIdAplicacao());
-                jCBAplicacoes.insertItemAt(newAplicacao.getNome(),newAplicacao.getIdAplicacao());
+                cmbAplicacoes.insertItemAt(newAplicacao.getNome(),newAplicacao.getIdAplicacao());
             }
 
             auxLink=null;
@@ -1583,7 +1581,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
   
     public void manterLinks(){
         int i;
-        Graphics2D g2d = (Graphics2D) jPanelP.getGraphics().create();
+        Graphics2D g2d = (Graphics2D) panelAmbiente.getGraphics().create();
         g2d.setStroke(new BasicStroke(4));
         
         for(i=0;i<Conexao.getQtde();i++){
@@ -1601,18 +1599,18 @@ public class PrincipalFrame extends javax.swing.JFrame {
         frame.setDefaultCloseOperation(javax.swing.JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_jMenuAbrirActionPerformed
 
-    private void jPanelPMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelPMouseMoved
+    private void panelAmbienteMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAmbienteMouseMoved
         manterLinks();
-    }//GEN-LAST:event_jPanelPMouseMoved
+    }//GEN-LAST:event_panelAmbienteMouseMoved
 		
 	private void jMenuFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuFecharActionPerformed
         this.dispose();
     }//GEN-LAST:event_jMenuFecharActionPerformed
 
-    private void jCBAplicacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBAplicacoesActionPerformed
-        configurarAplicacao(jCBAplicacoes.getSelectedIndex());
-        jCBAplicacoes.setSelectedItem(null);
-    }//GEN-LAST:event_jCBAplicacoesActionPerformed
+    private void cmbAplicacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbAplicacoesActionPerformed
+        configurarAplicacao(cmbAplicacoes.getSelectedIndex());
+        cmbAplicacoes.setSelectedItem(null);
+    }//GEN-LAST:event_cmbAplicacoesActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
 
@@ -1626,12 +1624,12 @@ public class PrincipalFrame extends javax.swing.JFrame {
         routerF = abrir.getFile();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
         // TODO add your handling code here:
         
         
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnLimparActionPerformed
         
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -1644,17 +1642,13 @@ public class PrincipalFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel TerminalMenu;
     private javax.swing.JLabel accessPointMenu;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox jCBAplicacoes;
-    private javax.swing.JComboBox jCBConexoes;
+    private javax.swing.JTree arvore;
+    private javax.swing.JButton btnLimpar;
+    private javax.swing.JComboBox cmbAplicacoes;
+    private javax.swing.JComboBox cmbConexoes;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -1674,23 +1668,26 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuNovo;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanelP;
     private javax.swing.JPopupMenu jPopupMonitor;
     private javax.swing.JPopupMenu jPopupNotebook;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JToggleButton jTBCsma;
-    private javax.swing.JToggleButton jTBEcho;
-    private javax.swing.JToggleButton jTBP2P;
-    private javax.swing.JToggleButton jTBTcp;
-    private javax.swing.JToggleButton jTBUdp;
-    private javax.swing.JToggleButton jTBWifi;
-    private javax.swing.JTree jTree1;
+    private javax.swing.JLabel lblAplicacoes;
+    private javax.swing.JLabel lblConexoes;
+    private javax.swing.JLabel lblCriarAplicacao;
+    private javax.swing.JLabel lblCriarConexao;
+    private javax.swing.JPanel panelAmbiente;
+    private javax.swing.JPanel panelComponentes;
+    private javax.swing.JPanel panelConfiguracao;
     private javax.swing.JLabel routerMenu;
+    private javax.swing.JScrollPane scrArvore;
+    private javax.swing.JScrollPane scrComponentes;
+    private javax.swing.JScrollPane scrPropriedades;
     private javax.swing.JLabel switchMenu;
+    private javax.swing.JToggleButton tbtnCSMA;
+    private javax.swing.JToggleButton tbtnP2P;
+    private javax.swing.JToggleButton tbtnTCP;
+    private javax.swing.JToggleButton tbtnUDP;
+    private javax.swing.JToggleButton tbtnWifi;
+    private javax.swing.JToggleButton tbtnecho;
+    private javax.swing.JLabel terminalMenu;
     // End of variables declaration//GEN-END:variables
 }
