@@ -160,8 +160,8 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setResizable(false);
 
+        panelAmbiente.setBackground(new java.awt.Color(200, 200, 200));
         panelAmbiente.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         panelAmbiente.setMaximumSize(null);
         panelAmbiente.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -174,7 +174,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
         panelAmbiente.setLayout(panelAmbienteLayout);
         panelAmbienteLayout.setHorizontalGroup(
             panelAmbienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 461, Short.MAX_VALUE)
+            .addGap(0, 466, Short.MAX_VALUE)
         );
         panelAmbienteLayout.setVerticalGroup(
             panelAmbienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,7 +198,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
         panelComponentes.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        terminalMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Terminal.png"))); // NOI18N
+        terminalMenu.setIcon(new javax.swing.ImageIcon("D:\\NS3\\ns3\\imagens\\Terminal.png")); // NOI18N
         terminalMenu.setToolTipText("Terminal");
         terminalMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -206,7 +206,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
             }
         });
 
-        switchMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Switch.png"))); // NOI18N
+        switchMenu.setIcon(new javax.swing.ImageIcon("D:\\NS3\\ns3\\imagens\\Switch.png")); // NOI18N
         switchMenu.setToolTipText("Switch");
         switchMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -214,7 +214,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
             }
         });
 
-        accessPointMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AccessPoint.png"))); // NOI18N
+        accessPointMenu.setIcon(new javax.swing.ImageIcon("D:\\NS3\\ns3\\imagens\\AccessPoint.png")); // NOI18N
         accessPointMenu.setToolTipText("Wifi AP");
         accessPointMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -222,7 +222,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
             }
         });
 
-        routerMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Router.png"))); // NOI18N
+        routerMenu.setIcon(new javax.swing.ImageIcon("D:\\NS3\\ns3\\imagens\\Router.png")); // NOI18N
         routerMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 routerMenuMouseClicked(evt);
@@ -360,7 +360,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
                 .addGroup(panelConfiguracaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(cmbConexoes, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmbAplicacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, 0)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnLimpar)
                 .addGap(0, 0, 0))
         );
@@ -391,7 +391,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
                         .addComponent(lblCriarAplicacao, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(8, 8, 8))
             .addGroup(panelConfiguracaoLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(15, 15, 15)
                 .addComponent(btnLimpar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -463,7 +463,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
                         .addComponent(panelAmbiente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(0, 0, 0)
                         .addComponent(scrPropriedades, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(panelConfiguracao, javax.swing.GroupLayout.DEFAULT_SIZE, 625, Short.MAX_VALUE))
+                    .addComponent(panelConfiguracao, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE))
                 .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(

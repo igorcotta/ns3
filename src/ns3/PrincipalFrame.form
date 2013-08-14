@@ -156,7 +156,6 @@
     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
       <Color id="Cursor Default"/>
     </Property>
-    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
@@ -191,7 +190,7 @@
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Component id="scrPropriedades" min="-2" pref="160" max="-2" attributes="1"/>
                   </Group>
-                  <Component id="panelConfiguracao" pref="625" max="32767" attributes="0"/>
+                  <Component id="panelConfiguracao" pref="630" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
           </Group>
@@ -224,6 +223,9 @@
   <SubComponents>
     <Container class="javax.swing.JPanel" name="panelAmbiente">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="c8" green="c8" red="c8" type="rgb"/>
+        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
             <EtchetBorder/>
@@ -240,7 +242,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="461" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="466" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -319,7 +321,7 @@
             <Component class="javax.swing.JLabel" name="terminalMenu">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Terminal.png"/>
+                  <Image iconType="2" name="D:\NS3\ns3\imagens\Terminal.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Terminal"/>
               </Properties>
@@ -330,7 +332,7 @@
             <Component class="javax.swing.JLabel" name="switchMenu">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Switch.png"/>
+                  <Image iconType="2" name="D:\NS3\ns3\imagens\Switch.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Switch"/>
               </Properties>
@@ -341,7 +343,7 @@
             <Component class="javax.swing.JLabel" name="accessPointMenu">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/AccessPoint.png"/>
+                  <Image iconType="2" name="D:\NS3\ns3\imagens\AccessPoint.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Wifi AP"/>
               </Properties>
@@ -352,7 +354,7 @@
             <Component class="javax.swing.JLabel" name="routerMenu">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Router.png"/>
+                  <Image iconType="2" name="D:\NS3\ns3\imagens\Router.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -422,7 +424,7 @@
                       <Component id="cmbConexoes" alignment="2" min="-2" pref="160" max="-2" attributes="0"/>
                       <Component id="cmbAplicacoes" alignment="2" min="-2" pref="160" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="btnLimpar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               </Group>
@@ -464,7 +466,7 @@
                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   <Component id="btnLimpar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
