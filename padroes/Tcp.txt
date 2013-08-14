@@ -1,0 +1,13 @@
+	OnOffHelper onoff_
+ ("ns3::TcpSocketFactory", Address (InetSocketAddress (
+.SetAttribute ("DataRate", StringValue ("
+.SetAttribute ("PacketSize", UintegerValue (
+	ApplicationContainer apps_
+.Install (
+.Start (Seconds (
+.Stop (Seconds (
+	PacketSinkHelper sink_
+ ("ns3::TcpSocketFactory", Address (InetSocketAddress (Ipv4Address::GetAny (), 
+.Install (
+.Start (Seconds (
+.Stop (Seconds (

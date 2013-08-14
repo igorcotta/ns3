@@ -1,0 +1,6 @@
+	CsmaHelper 
+.SetChannelAttribute ("DataRate", StringValue ("
+Mbps"));
+.SetChannelAttribute ("Delay", StringValue ("
+ms"));
+	NodeContainer nodes_

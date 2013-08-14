@@ -1,0 +1,9 @@
+
+	Ipv4GlobalRoutingHelper::PopulateRoutingTables ();
+
+	
+	/* Start and clean simulation. */
+	
+	Simulator::Run ();
+	Simulator::Destroy ();
+}

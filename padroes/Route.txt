@@ -1,0 +1,4 @@
+	// Trace routing tables 
+	Ipv4GlobalRoutingHelper g;
+	Ptr<OutputStreamWrapper> routingStream = Create<OutputStreamWrapper> ("routing_table", std::ios::out);
+	g.PrintRoutingTableAllAt (Seconds (1), routingStream);

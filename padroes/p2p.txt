@@ -1,0 +1,18 @@
+CRIAR
+	PointToPointHelper 
+.SetDeviceAttribute ("DataRate", StringValue ("
+Mbps"));
+.SetChannelAttribute ("Delay", StringValue ("
+ms"));
+	NodeContainer p2pNodes_
+	p2pNodes_
+.Add ( 
+);
+	p2pNodes_
+.Add (
+);
+	NetDeviceContainer devices_
+	devices_
+ = 
+.Install ( p2pNodes_
+);

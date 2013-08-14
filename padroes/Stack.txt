@@ -1,0 +1,3 @@
+	InternetStackHelper stack;
+	stack.Install (
+);

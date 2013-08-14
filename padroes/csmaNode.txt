@@ -1,0 +1,6 @@
+	nodes_
+.Add (
+	NetDeviceContainer devices_
+	devices_
+csma_
+.Install ( nodes_

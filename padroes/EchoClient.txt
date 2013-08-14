@@ -1,0 +1,9 @@
+	UdpEchoClientHelper 
+.SetAttribute ("MaxPackets", UintegerValue (
+.SetAttribute ("Interval", TimeValue (Seconds (
+.SetAttribute ("PacketSize", UintegerValue (
+	ApplicationContainer 
+.Install (
+.Start ( Seconds (
+.Stop ( Seconds (
+
