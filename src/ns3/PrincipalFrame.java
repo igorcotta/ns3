@@ -174,7 +174,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
         panelAmbiente.setLayout(panelAmbienteLayout);
         panelAmbienteLayout.setHorizontalGroup(
             panelAmbienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 455, Short.MAX_VALUE)
+            .addGap(0, 461, Short.MAX_VALUE)
         );
         panelAmbienteLayout.setVerticalGroup(
             panelAmbienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -463,7 +463,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
                         .addComponent(panelAmbiente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(0, 0, 0)
                         .addComponent(scrPropriedades, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(panelConfiguracao, javax.swing.GroupLayout.DEFAULT_SIZE, 619, Short.MAX_VALUE))
+                    .addComponent(panelConfiguracao, javax.swing.GroupLayout.DEFAULT_SIZE, 625, Short.MAX_VALUE))
                 .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
